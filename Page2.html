@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            background-color: rgba(245, 245, 220, 0.603);
+        }
+        form{
+
+            font-size: larger;
+            text-align: center;
+            font-weight: 900;
+            font-size: large;
+         }
+        button{
+            line-height: 2;
+            text-align: center;
+            font-weight: 900;
+            letter-spacing: 3.5;
+            font-size: large;
+            line-height: 2;
+        }
+    </style>
+    <title>Task Submissions</title>
+    <a href ="index1.html"></a>
+    
+</head>
+<body>
+    <br>
+    <br>
+    <form id="form">
+        <input type="file" id="file" required>
+        <br>
+        <br>
+        <br>
+        <button>Submit</button>
+    </form> 
+   
+</body>
+<script>
+    var form  = document.getElementById('form')
+    form.addEventListener('submit',function(event){
+        event.preventDefault() // prevents the form from auto-submitting
+        var file  = document.getElementById('file').value
+        console.log(file)   
+         })
+</script>
+</html>
