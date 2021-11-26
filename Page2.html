@@ -23,6 +23,82 @@
             font-size: large;
             line-height: 2;
         }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+        .success{
+            position:absolute;
+            top: 0;
+            right: 10px;
+            background-color:rgb(106,168,126);
+            padding: 20px 40px;
+            border-radius: 5px;
+            border-left: 4px;
+            overflow: hidden;
+        }
+        .check{
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: green;
+        }
+        .msg{
+            font: size 19px;
+            color: rgb(43, 121,43);
+            margin-left: 20px;
+        }
+        .crose{
+            padding: 20px 18px;
+            background-color: green;
+            font-size: 30px;
+            color: rgb(43, 121,43);
+            top: 50%;
+            right: 0;
+            transform: translate(-50%);
+            cursor: pointer;
+        }
+        .crose:hover{
+            background-color:rgb(106,168,126);
+        }
+        .success.show{
+            animation: show_slide is ease forwards;
+        }
+        @keyframes show_slide{
+            0%{
+                transform: translateX(100%);
+            }
+            40%{
+                transform: translateX(-10%);
+            }
+            80%{
+                transform: translateX(0%);
+            }
+            100%{
+                transform: translateX(-20px);
+            }
+        }
+        .success.hide{
+            animation: show_slide is ease forwards;
+        }
+        @keyframes hide_slide{
+            0%{
+                transform: translateX(-10px);
+            }
+            40%{
+                transform: translateX(0%);
+            }
+            80%{
+                transform: translateX(-10%);
+            }
+            100%{
+                transform: translateX(100%);
+            }
+        }
     </style>
     <title>Task Submissions</title>
     <a href ="home.html"></a>
@@ -38,8 +114,19 @@
         <br>
         <button>Submit</button>
     </form> 
+
+    <div class="success hide">
+         <span class="check"><i class="fa fa-check-circle"></i></span>
+        <span class="msg">Success: You work has been Submitted Successfully!</span>
+        <span class="crose"><i class="fa fa-times"></i></span>
+    </div>
    
 </body>
+<script src="jquery.3.4.1.js"></script>
+<script src="all.min.js"></script>
+<script>$('button').click(function()){
+    $.('.success').addClass("show");
+}</script>
 <script>
     var form  = document.getElementById('form')
     form.addEventListener('submit',function(event){
