@@ -14,6 +14,7 @@
             text-align: center;
             font-weight: 900;
             font-size: large;
+            margin-top: 7rem;
          }
         button{
             line-height: 2;
@@ -22,6 +23,7 @@
             letter-spacing: 3.5;
             font-size: large;
             line-height: 2;
+            margin-top: 3rem;
         }
         *{
             margin: 0;
@@ -29,15 +31,20 @@
             box-sizing: border-box;
             font-family: cursive;
         }
+
+        .alert {
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
         .success{
-            position:absolute;
-            top: 0;
-            right: 10px;
             background-color:rgb(106,168,126);
-            padding: 20px 40px;
+            padding: 12px;
             border-radius: 5px;
-            border-left: 4px;
             overflow: hidden;
+            display: none;
+            margin-top: -20rem;
         }
         .check{
             position: absolute;
@@ -49,10 +56,11 @@
         }
         .msg{
             font: size 19px;
-            color: rgb(43, 121,43);
+            color: white;
+            background-color: rgb(106,168,126);
             margin-left: 20px;
         }
-        .crose{
+        /* .crose{
             padding: 20px 18px;
             background-color: green;
             font-size: 30px;
@@ -64,7 +72,7 @@
         }
         .crose:hover{
             background-color:rgb(106,168,126);
-        }
+        } */
         .success.show{
             animation: show_slide is ease forwards;
         }
@@ -105,28 +113,28 @@
     
 </head>
 <body>
-    <br>
-    <br>
     <form id="form">
         <input type="file" id="file" required>
-        <br>
-        <br>
-        <br>
-        <button>Submit</button>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+        
     </form> 
 
-    <div class="success hide">
+    <div class="alert">
+    <div class="success hide" id="success">
          <span class="check"><i class="fa fa-check-circle"></i></span>
         <span class="msg">Success: You work has been Submitted Successfully!</span>
-        <span class="crose"><i class="fa fa-times"></i></span>
     </div>
+</div>
    
 </body>
 <script src="jquery.3.4.1.js"></script>
 <script src="all.min.js"></script>
-<script>$('button').click(function()){
-    $.('.success').addClass("show");
-}</script>
+<script src="script.js"></script>
+<!-- <script>$('button').click(function(){$('.success').addClass("show");
+})
+    </script> -->
 <script>
     var form  = document.getElementById('form')
     form.addEventListener('submit',function(event){
